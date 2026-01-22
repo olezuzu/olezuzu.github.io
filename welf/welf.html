@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welf Baumann</title>
+    <link rel="icon" href="w.png" type="image/png">
+    <!-- Importing Montserrat font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container for the main content */
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            width: 20vw;
+            height: 20vw;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 50%;
+            background-image: url('profile.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            border: 3px solid #333;
+        }
+
+        /* Main Title */
+        h1 {
+            margin-top: 30px;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            width: 160px;
+            text-align: center;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+
+        .social-links img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .social-links .handle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* Discord Section */
+        .discord-section {
+            margin-top: 50px;
+        }
+
+        .discord-section a {
+            display: block;
+            border: 2px solid #333;
+            padding: 15px 30px;
+            width: 200px;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .discord-section a:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+
+        /* Account Icon in top-right corner */
+        .account-icon {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .account-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .account-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-picture {
+                width: 30vw;
+                height: 30vw;
+                max-width: 180px;
+                max-height: 180px;
+            }
+
+            .social-links {
+                gap: 2rem;
+                flex-direction: column;
+            }
+
+            .discord-section a {
+                width: 70%;
+            }
+
+            .account-icon {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Account Icon -->
+        <a href="app/login.html" class="account-icon" title="Login">
+            <img src="account_icon.png" alt="Account">
+        </a>
+
+        <!-- Profile Section -->
+        <div class="profile-picture"></div>
+        <h1>Welf Baumann</h1>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.youtube.com/@WelfBaumann" target="_blank">
+                <img src="logo_youtube.png" alt="YouTube">
+                YouTube
+                <div class="handle">@WelfBaumann</div>
+            </a>
+            <a href="https://www.instagram.com/welf.baumann/" target="_blank">
+                <img src="logo_instagram.png" alt="Instagram">
+                Instagram
+                <div class="handle">@welf.baumann</div>
+            </a>
+            <a href="https://x.com/WelfBaumann" target="_blank">
+                <img src="logo_x.jpg" alt="X">
+                X
+                <div class="handle">@WelfBaumann</div>
+            </a>
+            <a href="https://rumble.com/c/c-3808830" target="_blank">
+                <img src="logo_rumble.png" alt="Rumble">
+                Rumble
+                <div class="handle">@WelfBaumann</div>
+            </a>
+        </div>
+
+        <!-- Discord Section -->
+        <div class="discord-section">
+            <a href="https://discord.gg/NJFzy4hr" target="_blank">
+                Join My Discord
+            </a>
+        </div>
+    </div>
+
+    <!-- Firebase SDK and Auth Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXxGFg9dE-V-9a_FFsl4E7yY05O_f8iq8",
+            authDomain: "welf-baumann-website.firebaseapp.com",
+            projectId: "welf-baumann-website",
+            storageBucket: "welf-baumann-website.firebasestorage.app",
+            messagingSenderId: "291830525607",
+            appId: "1:291830525607:web:5b963f9244871f7f1df582"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const accountLink = document.querySelector('.account-icon');
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                accountLink.href = 'app/dashboard.html';
+                accountLink.title = 'Dashboard';
+            } else {
+                accountLink.href = 'app/login.html';
+                accountLink.title = 'Login';
+            }
+        });
+    </script>
+
+</body>
+</html>

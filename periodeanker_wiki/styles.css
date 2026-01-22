@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    height: 100%;
+    background: antiquewhite;
+    font-family: Calibri;
+}
+
+a{
+    all: none;
+}
+.periodic_table{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(18, 4.5vw);
+    grid-gap: 0.3vw;
+    margin-top: 0.3vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.periodic_element{
+    background-color: white;
+    aspect-ratio: 1;
+    border-radius: 0.3vw;
+    transition: 200ms;
+}
+.leer{
+    width: 1fr;
+    aspect-ratio: 1;
+    background: none;
+}
+.periodic_element:hover{
+    transform: scale(1.1);
+}
+.periodic_element h2{
+    margin-top: 0.5vw;
+    font-size: 1.8vw;
+    text-align: center;
+}
+.periodic_element p{
+    font-size: 0.7vw;
+    text-align: center;
+}
+
+.nichtmetall{
+    background-color: #99FF99;
+}
+.halbmetall{
+    background-color: #DDDDBB;
+}
+.edelgas{
+    background-color: #BBBBFF;
+}
+
+.alkali{
+    background-color: #FF8888;
+}
+
+.erdalkali{
+    background-color: #FFAADD;
+}
+.halogen{
+    background-color: #FFFF99;
+}
+.übergang{
+    background-color: #BBFFFF;
+}
+.metall{
+    background-color: #CCCCCC;
+}
+.lantha{
+    background-color: #FFCC99;
+}
+.acti{
+    background-color: #FFBB77;   
+}
+.flüssig{
+    color: blue;
+}
+.gasförmig{
+    color: red;
+}
+.radioaktiv{
+    text-decoration: underline;
+}
+.unbekannt{
+    color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

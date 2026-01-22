@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Periodensystem</title>
+</head>
+
+<body onload="setup()">
+    
+    <div class="periodic_table">
+        <div class="periodic_element nichtmetall">
+            <h2 class="gasförmig wasserstoff h">H</h2>
+            <p class="wasserstoff h">Wasserstoff</p>
+        </div>
+
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="watch">
+            <div class="time" id="timer">00:00</div>
+        </div>
+        <div class="score">
+            <div id="score" onclick="select_score()">0/118</div>
+        </div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig helium he">He</h2>
+            <p class="helium he">Helium</p>
+        </div>
+
+        <div class="periodic_element alkali" onclick="select_L()">
+            <h2 class="lithium li">Li</h2>
+            <p class="lithium li">Lithium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="beryllium be">Be</h2>
+            <p class="beryllium be">Beryllium</p>
+        </div>
+
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="input">
+            <input type="text" id="input">
+        </div>
+        <button id="select" type="button" onclick="select_mode()">Name</button>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="bor b">B</h2>
+            <p class="bor b">Bor</p>
+        </div>
+
+        <div class="periodic_element nichtmetall">
+            <h2 class="kohlenstoff c">C</h2>
+            <p class="kohlenstoff c">Kohlenstoff</p>
+        </div>
+
+        <div class="periodic_element nichtmetall">
+            <h2 class="gasförmig stickstoff n">N</h2>
+            <p class="stickstoff n">Stickstoff</p>
+        </div>
+
+        <div class="periodic_element nichtmetall" onclick="select_O()">
+            <h2 class="gasförmig sauerstoff o">O</h2>
+            <p class="sauerstoff o">Sauerstoff</p>
+        </div>
+
+        <div class="periodic_element halogen">
+            <h2 class="gasförmig fluor f">F</h2>
+            <p class="fluor f">Fluor</p>
+        </div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig neon ne">Ne</h2>
+            <p class="neon ne">Neon</p>
+        </div>
+
+        <div class="periodic_element alkali">
+            <h2 class="natrium na">Na</h2>
+            <p class="natrium na">Natrium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="magnesium mg">Mg</h2>
+            <p class="magnesium mg">Magnesium</p>
+        </div>
+
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <button class="button_1" type="button" onclick="showall(), reset()">Auflösen</button>
+        <button class="button_2" type="button" onclick="hideall(), start()">(Neu)starten</button>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+
+        <div class="periodic_element metall">
+            <h2 class="aluminium al">Al</h2>
+            <p class="aluminium al">Aluminium</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="silicium si">Si</h2>
+            <p class="silicium si">Silicium</p>
+        </div>
+
+        <div class="periodic_element nichtmetall">
+            <h2 class="phosphor p">P</h2>
+            <p class="phosphor p">Phosphor</p>
+        </div>
+        
+        <div class="periodic_element nichtmetall">
+            <h2 class="schwefel s">S</h2>
+            <p class="schwefel s">Schwefel</p>
+        </div>
+
+        <div class="periodic_element nichtmetall halogen">
+            <h2 class="gasförmig chlor cl">Cl</h2>
+            <p class="chlor cl">Chlor</p>
+        </div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig argon ar">Ar</h2>
+            <p class="argon ar">Argon</p>
+        </div>
+
+        <div class="periodic_element alkali">
+            <h2 class="kalium k">K</h2>
+            <p class="kalium k">Kalium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="calcium ca">Ca</h2>
+            <p class="calcium ca">Calcium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="scandium sc">Sc</h2>
+            <p class="scandium sc">Scandium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="titan ti">Ti</h2>
+            <p class="titan ti">Titan</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="vanadium v">V</h2>
+            <p class="vanadium v">Vanadium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="chrom cr">Cr</h2>
+            <p class="chrom cr">Chrom</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="mangan mn">Mn</h2>
+            <p class="mangan mn">Mangan</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="eisen fe">Fe</h2>
+            <p class="eisen fe">Eisen</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="cobalt co">Co</h2>
+            <p class="cobalt co">Cobalt</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="nickel ni">Ni</h2>
+            <p class="nickel ni">Nickel</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="kupfer cu">Cu</h2>
+            <p class="kupfer cu">Kupfer</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="zink zn">Zn</h2>
+            <p class="zink zn">Zink</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="gallium ga">Ga</h2>
+            <p class="gallium ga">Gallium</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="germanium ge">Ge</h2>
+            <p class="germanium ge">Germanium</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="arsen as">As</h2>
+            <p class="arsen as">Arsen</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="selen se">Se</h2>
+            <p class="selen se">Selen</p>
+        </div>
+
+        <div class="periodic_element halogen ">
+            <h2 class="flüssig brom br">Br</h2>
+            <p class="brom br">Brom</p>
+        </div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig krypton kr">Kr</h2>
+            <p class="krypton kr">Krypton</p>
+        </div>
+
+        <div class="periodic_element alkali">
+            <h2 class="rubidium rb">Rb</h2>
+            <p class="rubidium rb">Rubidium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="strontium sr">Sr</h2>
+            <p class="strontium sr">Strontium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="yttrium y">Y</h2>
+            <p class="yttrium y">Yttrium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="zirkonium zr">Zr</h2>
+            <p class="zirkonium zr">Zirkonium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="niob nb">Nb</h2>
+            <p class="niob nb">Niob</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="molybdän mo">Mo</h2>
+            <p class="molybdän mo">Molybdän</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv technetium tc">Tc</h2>
+            <p class="technetium tc">Technetium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="ruthenium ru">Ru</h2>
+            <p class="ruthenium ru">Ruthenium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="rhodium rh">Rh</h2>
+            <p class="rhodium rh">Rhodium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="palladium pd">Pd</h2>
+            <p class="palladium pd">Palladium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="silber ag">Ag</h2>
+            <p class="silber ag">Silber</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="cadmium cd">Cd</h2>
+            <p class="cadmium cd">Cadmium</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="indium in">In</h2>
+            <p class="indium in">Indium</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="zinn sn">Sn</h2>
+            <p class="zinn sn">Zinn</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="antimon sb">Sb</h2>
+            <p class="antimon sb">Antimon</p>
+        </div>
+
+        <div class="periodic_element halbmetall">
+            <h2 class="tellur te">Te</h2>
+            <p class="tellur te">Tellur</p>
+        </div>
+
+        <div class="periodic_element halogen">
+            <h2 class="iod i">I</h2>
+            <p class="iod i">Iod</p>
+        </div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig xenon xe">Xe</h2>
+            <p class="xenon xe">Xenon</p>
+        </div>
+
+        <div class="periodic_element alkali">
+            <h2 class="caesium cs">Cs</h2>
+            <p class="caesium cs">Caesium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="barium ba">Ba</h2>
+            <p class="barium ba">Barium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="lanthan la">La</h2>
+            <p class="lanthan la">Lanthan</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="hafnium hf">Hf</h2>
+            <p class="hafnium hf">Hafnium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="tantal ta">Ta</h2>
+            <p class="tantal ta">Tantal</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="wolfram w">W</h2>
+            <p class="wolfram w">Wolfram</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="rhenium re">Re</h2>
+            <p class="rhenium re">Rhenium</p>
+        </div>
+
+        <div class="periodic_element übergang" onclick="select_O()">
+            <h2 class="osmium os">Os</h2>
+            <p class="osmium os">Osmium</p>
+        </div>
+        <div class="periodic_element übergang">
+            <h2 class="iridium ir">Ir</h2>
+            <p class="iridium ir">Iridium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="platin pt">Pt</h2>
+            <p class="platin pt">Platin</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="gold au">Au</h2>
+            <p class="gold au">Gold</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="flüssig quecksilber hg">Hg</h2>
+            <p class="quecksilber hg">Quecksilber</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="thallium tl">Tl</h2>
+            <p class="thallium tl">Thallium</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="blei pb">Pb</h2>
+            <p class="blei pb">Blei</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="radioaktiv bismut bi">Bi</h2>
+            <p class="bismut bi">Bismut</p>
+        </div>
+
+        <div class="periodic_element metall">
+            <h2 class="radioaktiv polonium po">Po</h2>
+            <p class="polonium po">Polonium</p>
+        </div>
+
+        <div class="periodic_element halogen">
+            <h2 class="radioaktiv astat at">At</h2>
+            <p class="astat at">Astat</p>
+        </div>
+
+        <div class="periodic_element edelgas">
+            <h2 class="gasförmig radioaktiv radon rn">Rn</h2>
+            <p class="radon rn">Radon</p>
+        </div>
+
+        <div class="periodic_element alkali">
+            <h2 class="radioaktiv francium fr">Fr</h2>
+            <p class="francium fr">Francium</p>
+        </div>
+
+        <div class="periodic_element erdalkali">
+            <h2 class="radioaktiv radium ra">Ra</h2>
+            <p class="radium ra">Radium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv actinium ac">Ac</h2>
+            <p class="actinium ac">Actinium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv rutherfordium rf">Rf</h2>
+            <p class="rutherfordium rf">Rutherfordium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv dubnium db">Db</h2>
+            <p class="dubnium db">Dubnium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv seaborgium sg">Sg</h2>
+            <p class="seaborgium sg">Seaborgium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv bohrium bh">Bh</h2>
+            <p class="bohrium bh">Bohrium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv hassium hs">Hs</h2>
+            <p class="hassium hs">Hassium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv meitnerium mt">Mt</h2>
+            <p class="meitnerium mt">Meitnerium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv darmstadtium ds">Ds</h2>
+            <p class="darmstadtium ds">Darmstadtium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv roentgenium rg">Rg</h2>
+            <p class="roentgenium rg">Roentgenium</p>
+        </div>
+
+        <div class="periodic_element übergang">
+            <h2 class="radioaktiv unbekannt copernicium cn">Cn</h2>
+            <p class="copernicium cn">Copernicium</p>
+        </div>
+
+        <div class="periodic_element">
+            <h2 class="radioaktiv unbekannt nihonium nh">Nh</h2>
+            <p class="nihonium nh">Nihonium</p>
+        </div>
+
+        <div class="periodic_element">
+            <h2 class="radioaktiv unbekannt flerovium fl">Fl</h2>
+            <p class="flerovium fl">Flerovium</p>
+        </div>
+
+        <div class="periodic_element">
+            <h2 class="radioaktiv unbekannt moscovium mc">Mc</h2>
+            <p class="moscovium mc">Moscovium</p>
+        </div>
+
+        <div class="periodic_element" onclick="select_L()">
+            <h2 class="radioaktiv unbekannt livermorium lv">Lv</h2>
+            <p class="livermorium lv">Livermorium</p>
+        </div>
+
+        <div class="periodic_element">
+            <h2 class="radioaktiv unbekannt tenness ts">Ts</h2>
+            <p class="tenness ts">Tenness</p>
+        </div>
+
+        <div class="periodic_element" onclick="select_O()">
+            <h2 class="radioaktiv unbekannt oganesson og">Og</h2>
+            <p class="oganesson og">Oganesson</p>
+        </div>
+
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="lanthanoide">Lanthanoide</div>
+
+        <div class="periodic_element lantha" onclick="select_L()">
+            <h2 class="cer ce">Ce</h2>
+            <p class="cer ce">Cer</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="praseodym pr">Pr</h2>
+            <p class="praseodym pr">Praseodym</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="neodym nd">Nd</h2>
+            <p class="neodym nd">Neodym</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="radioaktiv promethium pm">Pm</h2>
+            <p class="promethium pm">Promethium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="samarium sm">Sm</h2>
+            <p class="samarium sm">Samarium</p>
+        </div>
+
+        <div class="periodic_element lantha" onclick="select_E()">
+            <h2 class="europium eu">Eu</h2>
+            <p class="europium eu">Europium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="gadolinium gd">Gd</h2>
+            <p class="gadolinium gd">Gadolinium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="terbium tb">Tb</h2>
+            <p class="terbium tb">Terbium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="dysprosium dy">Dy</h2>
+            <p class="dysprosium dy">Dysprosium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="holmium ho">Ho</h2>
+            <p class="holmium ho">Holmium</p>
+        </div>
+
+        <div class="periodic_element lantha" onclick="select_E()">
+            <h2 class="erbium er">Er</h2>
+            <p class="erbium er">Erbium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="thulium tm">Tm</h2>
+            <p class="thulium tm">Thulium</p>
+        </div>
+
+        <div class="periodic_element lantha">
+            <h2 class="ytterbium yt">Yt</h2>
+            <p class="ytterbium yt">Ytterbium</p>
+        </div>
+
+        <div class="periodic_element lantha" onclick="select_L()">
+            <h2 class="lutetium lu">Lu</h2>
+            <p class="lutetium lu">Lutetium</p>
+        </div>
+
+        <div class="leer"></div>
+        <div class="leer"></div>
+        <div class="actinoide">Actinoide</div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv thorium th">Th</h2>
+            <p class="thorium th">Thorium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv protactinium pa">Pa</h2>
+            <p class="protactinium pa">Protactinium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv uran u">U</h2>
+            <p class="uran u">Uran</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv neptunium np">Np</h2>
+            <p class="neptunium np">Neptunium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv plutonium pu">Pu</h2>
+            <p class="plutonium pu">Plutonium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv americium am">Am</h2>
+            <p class="americium am">Americium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv curium cm">Cm</h2>
+            <p class="curium cm">Curium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv berkelium bk">Bk</h2>
+            <p class="berkelium bk">Berkelium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv californium cf">Cf</h2>
+            <p class="californium cf">Californium</p>
+        </div>
+
+        <div class="periodic_element acti" onclick="select_E()">
+            <h2 class="radioaktiv einsteinium es">Es</h2>
+            <p class="einsteinium es">Einsteinium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv fermium fm">Fm</h2>
+            <p class="fermium fm">Fermium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv mendelevium md">Md</h2>
+            <p class="mendelevium md">Mendelevium</p>
+        </div>
+
+        <div class="periodic_element acti">
+            <h2 class="radioaktiv nobelium no">No</h2>
+            <p class="nobelium no">Nobelium</p>
+        </div>
+
+        <div class="periodic_element acti" onclick="select_L()">
+            <h2 class="radioaktiv lawrencium lr">Lr</h2>
+            <p class="lawrencium lr">Lawrencium</p>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

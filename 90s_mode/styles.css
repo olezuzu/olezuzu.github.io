@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,228,1) 100%);
+}
+
+
+.header {
+    height: 8vw;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,252,0,1) 8%, rgba(39,255,0,1) 16%, rgba(0,236,255,1) 26%, rgba(0,9,255,1) 36%, rgba(255,0,134,1) 44%, rgba(255,0,0,1) 50%,rgba(255,252,0,1) 58%, rgba(39,255,0,1) 68%, rgba(0,236,255,1) 75%, rgba(0,9,255,1) 85%, rgba(255,0,134,1) 93%, rgba(255,0,0,1) 99%);
+    border-bottom: 0.5vw solid black;
+}
+.header h1 {
+    font-size: 7vw;
+    text-align: center;
+    -webkit-text-stroke: 0.25vw black;
+}
+
+.content {
+    margin: 5vw 0 0 10vw;
+}
+
+.content a {
+    text-decoration: none;
+    font-size: 2.5vw;
+    color: red;
+    font-weight: bold;
+    -webkit-text-stroke: 0.1vw orange;
+}
+
+ul li {
+    margin-bottom: 2.5vw;
+}
+
+ul li::marker {
+    content: "⇛        ";
+    font-size: 2.5vw;
+    color: orange;
+}
