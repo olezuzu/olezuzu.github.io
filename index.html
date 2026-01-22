@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ole Ahrenhold</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerstyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/4795f3e6cb.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    
+    <div id="header-placeholder"></div> <!-- Placeholder for header -->
+
+    <header class="hero">
+        <div>
+            <h1 id="hero-text"></h1>
+            <!-- <p id="quote"></p> -->
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about" data-aos="fade-up" data-aos-offset="100">
+            <a href="#about">
+                <h2>Über mich</h2>
+            </a>
+            <ul>
+                <li>Ole Ahrenhold</li>
+                <li>27. Juli 2006</li>
+            </ul>    
+        </section>
+
+        <section id="projects" class="projects" data-aos="fade-up" data-aos-offset="100">
+            <a href="#projects">
+                <h2 style="text-align: left;">Projekte</h2>
+            </a>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <a href="/periodeenter" class="project-link">
+                        <img src="1.jpg" alt="Project 1" class="project-image">
+                        <div class="project-content">
+                            <h3>Periodensysytem Quiz</h3>
+                            <p>Gib alle 118 Elemente des Periodensystems in beliebiger Reihenfolge so schnell wie
+                                möglich ein!</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <a href="/periodeanker_wiki" class="project-link">
+                        <img src="2.jpg" alt="Project 2" class="project-image">
+                        <div class="project-content">
+                            <h3>Periodensystem mit Wiki-Links</h3>
+                            <p>Periodensystem, welches einen beim Klicken auf ein beliebiges Element auf den
+                                entsprechenden Wikipedia-Artikel bringt.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                        <img src="3.jpg" alt="Project 3" class="project-image">
+                        <div class="project-content">
+                            <h3>Fusce Volutpat Justo</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce volutpat
+                                justo et bibendum vehicula.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                        <img src="4.jpg" alt="Project 4" class="project-image">
+                        <div class="project-content">
+                            <h3>Molestie Ligula Dapibus</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce volutpat
+                                justo et bibendum vehicula.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                        <img src="5.jpg" alt="Project 5" class="project-image">
+                        <div class="project-content">
+                            <h3>Curabitur Malesuada Risus</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce volutpat
+                                justo et bibendum vehicula.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                        <img src="6.jpg" alt="Project 6" class="project-image">
+                        <div class="project-content">
+                            <h3>Alte Homepage</h3>
+                            <p>...um auf Websites zuzugreifen, zu welchen auf dieser Seite noch kein Link existiert.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="socials" class="contact" data-aos="fade-up" data-aos-offset="100">
+            <a href="#socials">
+                <h2>Soziales</h2>
+            </a>
+            <div class="social-icons">
+                <a href="https://instagram.com/olezuzu" class="icon" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+
+
+
+        <section id="contact" class="contact" data-aos="fade-up" data-aos-offset="100">
+            <a href="#contact">
+                <h2>Kontakt</h2>
+            </a>
+            <p>Bei Fragen oder Anregungen einfach eine Mail schreiben.</p>
+            <p>Email: <a class="mail" href="mailto:kontakt@oleahrenhold.de">kontakt@oleahrenhold.de</a></p>
+        </section>
+    </div>
+
+
+
+
+    <div id="progressBar"></div>
+
+    <div id="footer-placeholder"></div> <!-- Placeholder for footer -->
+    
+</body>
+
+<script src="header.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    const text = "Ole Ahrenhold";
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("hero-text").textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", typeEffect);
+
+    window.addEventListener("scroll", () => {
+        let scroll = document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let progress = (scroll / height) * 100;
+        document.getElementById("progressBar").style.width = progress + "%";
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({ duration: 1000 });
+    });
+
+
+
+    const quotes = [
+        "\"Turn left to go right\" - Doc Hudson",
+        "\"Per aspera ad astra\"",
+        "\"If you know the enemy and know yourself, you need not fear the result of a hundred battles.\" - Sun Tzu, The Art of War",
+        "\"Kann man machen, muss man aber nicht\"",
+        "\"Mal ist man der Hund, mal der Baum. C'est la vie...\"",
+        "\"Lieber zwei Damen im Arm, als zwei Arme im Darm.\" - vmtl. Sokrates",
+        "\"It's free real estate\""
+    ];
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById('quote').innerText = randomQuote;
+</script>
+
+</html>
+
+
+

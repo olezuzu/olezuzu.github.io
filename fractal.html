@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            background-color: black;
+        }
+
+        .left, .right {
+            flex: 1;
+            height: 100vh;
+            background-color: black;
+            border: none;
+        }
+
+        .center {
+            flex: 1;
+            background-color: white;
+            height: 100vh;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <iframe src="fractal.html"></iframe>
+    </div>
+    <div class="center"></div>
+    <div class="right">
+        <iframe src="fractal.html"></iframe>
+    </div>
+
+</body>
+</html>

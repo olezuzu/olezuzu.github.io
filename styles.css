@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 175px;
+}
+
+.hero {
+    height: calc(100vh - 60px);
+    /* Full viewport height minus the height of the header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%),
+        url('landscape-4434188_1280.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 22px;
+    width: 100%;
+}
+
+#quote {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.about ul{
+    padding-left: 50px;
+}
+
+.about ul li{
+    padding-left: px;
+}
+
+.about,
+.contact {
+    background: white;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h2,
+.contact h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+/* Projects Section */
+.projects {
+    background: white;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    text-align: left;
+    /* Align the heading to the left */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-content {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+}
+
+.project-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.project-content p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.project-image {
+    width: 100%;
+    /* Make the image fill the entire width of the container */
+    height: 100%;
+    /* Make the image fill the entire height of the container */
+    object-fit: cover;
+    /* Ensure the image covers the container without distortion, cropping if necessary */
+    max-height: 300px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.icon {
+    width: 75px;
+    height: 75px;
+    background-color: #1e3c72;
+    /* Solid color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.6s, box-shadow 0.3s;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon i {
+    font-size: 32px;
+    color: white;
+    /* White color for icons */
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    background-color: #007bff;
+    /* Lighter blue for hover */
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px #007bff;
+}
+
+.icon:hover i {
+    color: white;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+}
+
+
+
+.contact a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact .mail:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e3a8a;
+    color: white;
+    margin-top: 40px;
+}
+
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: #1e3a8a;
+    z-index: 9999;
+}
+
+section a {
+    text-decoration: none;
+    transition: ease;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ole Ahrenhold - Chemistry & Web Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1565c0;
+            border-radius: 5px;
+        }
+        .toggle-dark-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            background: url('https://source.unsplash.com/1600x900/?landscape,nature') center/cover no-repeat;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1565c0;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #ffeb3b;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .progress-container {
+            width: 100%;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 20px;
+            width: 0%;
+            background: #1565c0;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            font-weight: bold;
+            transition: width 2s ease-in-out;
+        }
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <div class="hero">
+        <div id="particles-js"></div>
+        <h1>Ole Ahrenhold - Chemistry & Web Development</h1>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container" data-aos="fade-up">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hi, I'm Ole Ahrenhold, a student passionate about Chemistry and Web Development. I enjoy working on research projects, participating in hackathons, and contributing to open-source software.</p>
+        </section>
+        <section id="achievements" class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Finalist in the German selection for the International Chemistry Olympiad 2024</li>
+                <li>2nd place in Lower Saxony in a Chemistry competition</li>
+                <li>Winner of a digital education video competition</li>
+                <li>Developed an award-winning research project in computational chemistry</li>
+            </ul>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>Developed and maintained the school website as part of the Homepage AG</li>
+                <li>Created a personal homepage showcasing my coding skills</li>
+                <li>Built an interactive periodic table web application</li>
+            </ul>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div>HTML & CSS</div>
+                <div class="progress-container"><div class="progress-bar" data-progress="90%"></div></div>
+                <div>JavaScript</div>
+                <div class="progress-container"><div class="progress-bar" data-progress="85%"></div></div>
+                <div>Python</div>
+                <div class="progress-container"><div class="progress-bar" data-progress="80%"></div></div>
+                <div>Chemistry</div>
+                <div class="progress-container"><div class="progress-bar" data-progress="95%"></div></div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: [Your Email]</p>
+            <p>LinkedIn: [Your LinkedIn]</p>
+            <p>GitHub: [Your GitHub]</p>
+        </section>
+    </div>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 }
+            }
+        });
+        AOS.init();
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".progress-bar").forEach(bar => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute("data-progress");
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

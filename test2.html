@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icons</title>
+    <script src="https://kit.fontawesome.com/4795f3e6cb.js" crossorigin="anonymous"></script>
+    <style>
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .icon {
+            width: 75px;
+            height: 75px;
+            background-color: #1e3c72; /* Solid color */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.6s, box-shadow 0.3s;
+            text-decoration: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .icon i {
+            font-size: 32px;
+            color: white; /* White color for icons */
+            transition: color 0.3s;
+        }
+        .icon:hover {
+            background-color: #007bff; /* Lighter blue for hover */
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px #007bff;
+        }
+        .icon:hover i {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="social-icons">
+        <a href="https://instagram.com" class="icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" class="icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" class="icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://reddit.com" class="icon"><i class="fab fa-reddit"></i></a>
+        <a href="https://linkedin.com" class="icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" class="icon"><i class="fab fa-github"></i></a>
+    </div>
+</body>
+</html>
