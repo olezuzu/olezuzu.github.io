@@ -1,9 +1,0 @@
-else if (input === 'WASSERSTOFF' && wasserstoff != 1){
-        document.getElementById("input").value = '';
-        n = document.getElementsByClassName('wasserstoff');
-        for (var i=0; i<n.length; i++) {
-            n[i].style.display = 'block';
-        }
-        wasserstoff = 1;
-        score = score + 1;
-    }
